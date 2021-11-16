@@ -1,3 +1,4 @@
+#include <linux/fs.h>
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
@@ -25,16 +26,18 @@ struct usb_kbd {
 	dma_addr_t new_dma;	
 };
 
+
 static void usb_kbd_irq(struct urb *urb) {
-	printk(KERN_INFO "Hi\n");
+	printk(KERN_ALERT "Hi\n");
 }
 
 static int usb_kbd_event(struct input_dev *dev, unsigned int type, unsigned int code, int value) {
-	printk(KERN_INFO "Hi\n");
+	printk(KERN_ALERT "Hi\n");
 	return 0;
 }
 
 static int usb_kbd_open(struct input_dev *dev) {
+	printk(KERN_ALERT "Hi\n");
 	struct usb_kbd *kbd = input_get_drvdata(dev);
 	kbd->irq->dev = kbd->usbdev;
 	usb_submit_urb(kbd->irq, GFP_KERNEL);
@@ -42,12 +45,12 @@ static int usb_kbd_open(struct input_dev *dev) {
 }
 
 static void usb_kbd_close(struct input_dev *dev) {
-	
+	printk(KERN_ALERT "Hi\n");
 }
 
 
 static int usb_kbd_probe(struct usb_interface *iface, const struct usb_device_id *id) {
-	printk(KERN_INFO "Probe initiated\n");
+	printk(KERN_ALERT "Probe initiated\n");
 	
 	struct usb_device *dev = interface_to_usbdev(iface);
 	struct usb_host_interface *interface;
@@ -104,7 +107,7 @@ static int usb_kbd_probe(struct usb_interface *iface, const struct usb_device_id
 }
 
 static void usb_kbd_disconnect(struct usb_interface *intf) {
-	printk(KERN_INFO "We're freeeeee!\n");
+	printk(KERN_ALERT "We're freeeeee!\n");
 }
 
 static const struct usb_device_id usb_kbd_id_table[] = {

@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo rmmod halfqwerty
+sudo rmmod halfqwerty-serio

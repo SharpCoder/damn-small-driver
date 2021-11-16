@@ -1,0 +1,1 @@
+cmd_/home/josh/repos/damn-small-driver/modules.order := {   echo /home/josh/repos/damn-small-driver/src/halfqwerty-serio.ko; :; } | awk '!x[$$0]++' - > /home/josh/repos/damn-small-driver/modules.order
