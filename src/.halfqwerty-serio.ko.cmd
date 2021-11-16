@@ -1,1 +1,0 @@
-cmd_/home/josh/repos/damn-small-driver/src/halfqwerty-serio.ko := ld -r -m elf_x86_64 --build-id=sha1  -T arch/x86/module.lds -o /home/josh/repos/damn-small-driver/src/halfqwerty-serio.ko /home/josh/repos/damn-small-driver/src/halfqwerty-serio.o /home/josh/repos/damn-small-driver/src/halfqwerty-serio.mod.o;  true

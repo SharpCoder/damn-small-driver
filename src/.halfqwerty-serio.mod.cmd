@@ -1,1 +1,0 @@
-cmd_/home/josh/repos/damn-small-driver/src/halfqwerty-serio.mod := { echo  /home/josh/repos/damn-small-driver/src/halfqwerty-serio.o;  echo; } > /home/josh/repos/damn-small-driver/src/halfqwerty-serio.mod
